@@ -48,7 +48,7 @@ function App({ Component, pageProps }) {
           <Route exact path="/signup">
             <Signup />
           </Route>
-          hello ssas
+          hello ssasdd
         </ChakraProvider>
       </ApolloProvider>
     </Router>
