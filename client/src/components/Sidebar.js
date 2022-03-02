@@ -80,9 +80,9 @@ export default function Sidebar() {
           />
         </Link>
         {Auth.loggedIn() ? (
-          <>
-            <Link to="/">
-              <NavItem navSize={navSize} icon={FiCalendar} title="" active />
+          <>            
+            <Link to="/" onClick={logout}>
+              <NavItem navSize={navSize} icon={FiCalendar} title="Logout" />
             </Link>
 
             <Flex

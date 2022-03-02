@@ -8,7 +8,7 @@ function LoginPage () {
         <Flex direction="column" background={formBackground} p={12} rounded={6}>
             <Heading mb={6}>Log in</Heading>
             <Input placeholder="Email" variant="outline" mb={3} type="email"/>
-            <Input placeholder='********' variant='outline' mb={6} type='password'/>
+            <Input placeholder='********' variant='outline'  type='password'/>
             <Button mb={6} colorScheme="blue">Log In</Button>
             <Button onClick={toggleColorMode}>Toggle Theme</Button>
 
