@@ -7,6 +7,7 @@ import {
   Button,
   Flex,
   Input,
+  Spinner,
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -51,6 +52,7 @@ const Login = () => {
             <p>
               Success!
               <Link to="/">back to the homepage.</Link>
+              <Spinner />
             </p>
           ) : (
             <form

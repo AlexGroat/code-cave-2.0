@@ -7,6 +7,7 @@ import {
   Button,
   Flex,
   Alert,
+  Spinner,
   Input,
   useColorMode,
   useColorModeValue,
@@ -52,6 +53,7 @@ const Signup = () => {
             <p>
               Success!
               <Link to="/">back to the homepage.</Link>
+              <Spinner />
             </p>
           ) : (
             <form
