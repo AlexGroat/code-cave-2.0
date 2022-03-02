@@ -93,11 +93,11 @@ const Signup = () => {
                     value={formState.password}
                     onChange={handleChange}
                   />
-                  <button mb={3} style={{ curser: "pointer" }} type="submit">
+                  <Button mb={3} colorScheme="blue" style={{ curser: "pointer" }} type="submit">
                     Signup
-                  </button>
+                  </Button>
 
-                  <Button onClick={toggleColorMode} mt={3}>
+                  <Button onClick={toggleColorMode}>
                     Toggle Theme
                   </Button>
                 </Flex>
