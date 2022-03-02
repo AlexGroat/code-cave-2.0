@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import Auth from '../utils/auth';
-import {
-  Flex,
-  IconButton,
-  Divider,
-  Avatar,
-  Heading,
-} from "@chakra-ui/react";
+import { useQuery } from "@apollo/client";
+import { QUERY_USER, QUERY_ME } from "../utils/queries";
+import Auth from "../utils/auth";
+import { Flex, IconButton, Divider, Avatar, Heading } from "@chakra-ui/react";
 import {
   FiMenu,
   FiHome,
@@ -21,10 +17,18 @@ import { IoPawOutline } from "react-icons/io5";
 import NavItem from "./NavItem";
 
 export default function Sidebar() {
-    const logout = (event) => {
-        event.preventDefault();
-        Auth.logout();
-      };
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
+
+  const { username: currentUser } = useParams();
+
+  const { loading, data } = useQuery(currentUser ? QUERY_USER : QUERY_ME, {
+    variables: { username: currentUser },
+  });
+
+  const user = data?.me || data?.user || {};
   const [navSize, changeNavSize] = useState("large");
   return (
     <Flex
