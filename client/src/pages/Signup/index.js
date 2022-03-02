@@ -52,7 +52,7 @@ const Signup = () => {
           {data ? (
             <p>
               Success!!!
-              <Link to="/">back to the homepage.</Link>
+              <Link to="/">back to the dashboard.</Link>
               <Spinner />
             </p>
           ) : (
