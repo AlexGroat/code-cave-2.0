@@ -18,6 +18,7 @@ import {
   FiHome,
   FiCalendar,
   FiUser,
+  FiLogIn,
   FiLogOut,
   FiMail,
   FiDollarSign,
@@ -117,7 +118,7 @@ export default function Sidebar() {
         ) : (
           <>
             <Link to="/login">
-              <NavItem navSize={navSize} icon={FiUser} title="Login" />
+              <NavItem navSize={navSize} icon={FiLogIn} title="Login" />
             </Link>
             <Link to="/Signup">
               <NavItem navSize={navSize} icon={FiUserPlus} title="Signup" />
