@@ -18,6 +18,8 @@ import {
   FiHome,
   FiCalendar,
   FiUser,
+  FiLogOut,
+  FiMail,
   FiDollarSign,
   FiBriefcase,
   FiSettings,
@@ -81,9 +83,14 @@ export default function Sidebar() {
         </Link>
         {Auth.loggedIn() ? (
           <>            
-            <Link to="/" onClick={logout}>
-              <NavItem navSize={navSize} icon={FiCalendar} title="Logout" />
+            <Link to="/chat">
+              <NavItem navSize={navSize} icon={FiMail} title="Chatroom" />
             </Link>
+
+            <Link to="/" onClick={logout}>
+              <NavItem navSize={navSize} icon={FiLogOut} title="Logout" />
+            </Link>
+
 
             <Flex
               p="5%"
