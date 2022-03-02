@@ -51,7 +51,7 @@ const Signup = () => {
         <div>
           {data ? (
             <p>
-              Success!
+              Success!!!
               <Link to="/">back to the homepage.</Link>
               <Spinner />
             </p>
