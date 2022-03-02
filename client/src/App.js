@@ -13,6 +13,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Chat from "./pages/Chat";
 
 // construct main graphql API endpoint
 const httpLink = createHttpLink({
@@ -51,6 +52,9 @@ function App({ Component, pageProps }) {
           </Route>
           <Route exact path="/signup">
             <Signup />
+          </Route>
+          <Route exact path="/chat">
+            <Chat />
           </Route>
         </ChakraProvider>
       </ApolloProvider>
