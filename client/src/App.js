@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import { ChakraProvider } from "@chakra-ui/react";
 
+import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
@@ -42,13 +43,15 @@ function App({ Component, pageProps }) {
     <Router>
       <ApolloProvider client={client}>
         <ChakraProvider {...pageProps}>
+          <Route exact path="/">
+            <Home />
+          </Route>
           <Route exact path="/login">
             <Login />
           </Route>
           <Route exact path="/signup">
             <Signup />
           </Route>
-          hello ssasdd
         </ChakraProvider>
       </ApolloProvider>
     </Router>
