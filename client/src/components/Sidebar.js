@@ -40,7 +40,7 @@ export default function Sidebar() {
   });
 
   const user = data?.me || data?.user || {};
-  const [navSize, changeNavSize] = useState("large");
+  const [navSize, changeNavSize] = useState("small");
   return (
     <Flex
       pos="sticky"
