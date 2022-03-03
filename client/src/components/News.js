@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import React from "react";
-import { LinkBox, Box, Text, Spinner } from "@chakra-ui/react";
+import { LinkBox, Box, Heading, Spinner } from "@chakra-ui/react";
 import { GET_NEWS } from '../utils/queries';
 
 const NewsBar = () => {
@@ -17,7 +17,7 @@ const NewsBar = () => {
           news.slice(0, 6).map((article) => (
             <LinkBox maxW='sm' p='5' borderWidth='1px' rounded='md' mb={2}>
               <div>
-                  <p>{article.author}</p>
+                  <Heading size='md'>{article.author}</Heading>
                 <Box>
                   <p >{article.title}</p>
                 </Box>
