@@ -69,6 +69,7 @@ const Signup = () => {
                   rounded={6}
                 >
                   <Input
+                    focusBorderColor="lime"
                     className="signupInput"
                     placeholder="Your username"
                     mb={3}
@@ -78,6 +79,7 @@ const Signup = () => {
                     onChange={handleChange}
                   />
                   <Input
+                    focusBorderColor="lime"
                     className="signupInput"
                     placeholder="Email"
                     mb={3}
@@ -87,6 +89,7 @@ const Signup = () => {
                     onChange={handleChange}
                   />
                   <Input
+                    focusBorderColor="lime"
                     className="passwordInput"
                     placeholder="Password"
                     mb={3}
@@ -95,13 +98,16 @@ const Signup = () => {
                     value={formState.password}
                     onChange={handleChange}
                   />
-                  <Button mb={3} colorScheme="blue" style={{ curser: "pointer" }} type="submit">
+                  <Button
+                    mb={3}
+                    colorScheme="blue"
+                    style={{ curser: "pointer" }}
+                    type="submit"
+                  >
                     Signup
                   </Button>
 
-                  <Button onClick={toggleColorMode}>
-                    Toggle Theme
-                  </Button>
+                  <Button onClick={toggleColorMode}>Toggle Theme</Button>
                 </Flex>
               </Flex>
             </form>

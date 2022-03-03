@@ -68,6 +68,7 @@ const Login = () => {
                   rounded={6}
                 >
                   <Input
+                    focusBorderColor="lime"
                     className="signupInput"
                     placeholder="Email"
                     mb={3}
@@ -77,6 +78,7 @@ const Login = () => {
                     onChange={handleChange}
                   />
                   <Input
+                    focusBorderColor="lime"
                     className="passwordInput"
                     placeholder="Password"
                     mb={3}
