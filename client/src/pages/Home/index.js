@@ -1,5 +1,5 @@
 import Sidebar from "../../components/Sidebar";
-import { Flex, Heading } from "@chakra-ui/react";
+import { Flex, Heading, Input } from "@chakra-ui/react";
 import './index.css';
 
 export default function Home() {
@@ -20,6 +20,7 @@ export default function Home() {
       <div className="columns" style={{display: 'flex'}}>
       <div className="column-2 col-6">
         <Heading mt={2}>Code Cave</Heading>
+        <Input mt={2} placeholder="basic"/>
       </div>
       <div className="column-3 col-6">
         <Heading mt={2}>News here</Heading>
