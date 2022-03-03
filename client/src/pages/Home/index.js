@@ -11,7 +11,7 @@ export default function Home() {
         style={{ position: "relative", zIndex: "1" }}
       >
         <Flex w="100%">
-          <Sidebar />
+          <Sidebar zIndex='1' />
           <Flex
             pos="absolute"
             top="50%"

@@ -13,17 +13,13 @@ import {
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { StarIcon } from '@chakra-ui/icons'
 import {
   FiMenu,
   FiHome,
-  FiCalendar,
-  FiUser,
   FiLogIn,
   FiLogOut,
   FiMail,
-  FiDollarSign,
-  FiBriefcase,
-  FiSettings,
   FiUserPlus,
 } from "react-icons/fi";
 import { IoPawOutline } from "react-icons/io5";
@@ -134,14 +130,14 @@ export default function Sidebar() {
         alignItems={navSize == "small" ? "center" : "flex-start"}
         mb={4}
       >
-        <Divider display={navSize == "small" ? "none" : "flex"} />
+        <Divider display={navSize == "small" ? "center" : "flex"} />
         <Flex mt={4} align="center">
           <Flex
             flexDir="column"
             ml={4}
-            display={navSize == "small" ? "none" : "flex"}
+            display={navSize == "small" ? "center" : "flex"}
           >
-            <Button onClick={toggleColorMode}>Toggle Theme</Button>
+            <Button onClick={toggleColorMode}><StarIcon /></Button>
           </Flex>
         </Flex>
       </Flex>
