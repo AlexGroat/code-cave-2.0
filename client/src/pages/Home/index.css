@@ -1,18 +1,39 @@
 .column-container {
-    width: 100%;
+  width: 100%;
 }
 
 .columns {
-    width: 100%;
+  width: 100%;
+}
+
+.column-3 {
+  margin-left: 100px;
 }
 
 @media (max-width: 800px) {
-    .columns {
-      flex-direction: column;
-    }
-  
-    .columns div {
-      width: 100%;
-    }
-  
+  .columns {
+    flex-direction: column;
   }
+
+  .columns div {
+    width: 100%;
+  }
+
+  .column-3 {
+    margin-left: 50px;
+  }
+}
+
+@media (max-width: 560px) {
+   .column-3 {
+    width: 70%;
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 500px) {
+   .column-3 {
+    width: 40%;
+    margin-left: 0px;
+  }
+}

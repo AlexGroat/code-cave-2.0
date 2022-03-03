@@ -1,11 +1,15 @@
 import Sidebar from "../../components/Sidebar";
 import { Flex, Heading, Input } from "@chakra-ui/react";
-import './index.css';
+import "./index.css";
+import News from "../../components/News";
 
 export default function Home() {
   return (
-    <div className="home-container" style={{display: "flex"}}>
-      <div className="column-1 col-2" style={{position: 'relative', zIndex: '1'}}>
+    <div className="home-container" style={{ display: "flex" }}>
+      <div
+        className="column-1 col-2"
+        style={{ position: "relative", zIndex: "1" }}
+      >
         <Flex w="100%">
           <Sidebar />
           <Flex
@@ -17,15 +21,16 @@ export default function Home() {
         </Flex>
       </div>
       <div className="column-container">
-      <div className="columns" style={{display: 'flex'}}>
-      <div className="column-2 col-6">
-        <Heading mt={2}>Code Cave</Heading>
-        <Input mt={2} placeholder="basic"/>
-      </div>
-      <div className="column-3 col-6">
-        <Heading mt={2}>News here</Heading>
-      </div>
-      </div>
+        <div className="columns" style={{ display: "flex" }}>
+          <div className="column-2 col-6">
+            <Heading mt={3}>Code Cave</Heading>
+            <Input mt={2} placeholder="basic" />
+          </div>
+          <div className="column-3 col-6">
+          <Heading mt={3} mb={3}>Tech News</Heading>
+            <News />
+          </div>
+        </div>
       </div>
     </div>
   );
