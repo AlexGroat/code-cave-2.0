@@ -27,6 +27,7 @@ const typeDefs = gql`
   }
 
   type Article {
+    author: String
     title: String
     url: String
   }

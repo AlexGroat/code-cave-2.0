@@ -17,6 +17,7 @@ const NewsBar = () => {
           news.slice(0, 6).map((article) => (
             <LinkBox maxW='sm' p='5' borderWidth='1px' rounded='md' mb={2}>
               <div>
+                  <p>{article.author}</p>
                 <Box>
                   <p >{article.title}</p>
                 </Box>

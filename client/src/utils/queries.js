@@ -64,6 +64,7 @@ export const GET_NEWS = gql`
     articles {
       title
       url
+      author
     }
   }
 `;
