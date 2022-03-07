@@ -14,6 +14,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Chat from "./pages/Chat";
+import Profile from "./pages/Profile";
 
 // construct main graphql API endpoint
 const httpLink = createHttpLink({
@@ -55,6 +56,9 @@ function App({ Component, pageProps }) {
           </Route>
           <Route exact path="/chat">
             <Chat />
+          </Route>
+          <Route exact path="/profiles/:username">
+            <Profile />
           </Route>
         </ChakraProvider>
       </ApolloProvider>
