@@ -2,6 +2,7 @@ import Sidebar from "../../components/Sidebar";
 import { Flex, Heading, Input } from "@chakra-ui/react";
 import "./index.css";
 import News from "../../components/News";
+import PostForm from '../../components/PostForm'
 
 export default function Home() {
   return (
@@ -24,7 +25,7 @@ export default function Home() {
         <div className="columns" style={{ display: "flex" }}>
           <div className="column-2 col-6">
             <Heading mt={3}>Code Cave</Heading>
-            <Input mt={2} placeholder="basic" />
+            <PostForm />
           </div>
           <div className="column-3 col-6">
           <Heading mt={3} mb={3}>Tech News</Heading>
