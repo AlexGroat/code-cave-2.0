@@ -22,6 +22,7 @@ import {
   FiLogOut,
   FiMail,
   FiUserPlus,
+  FiUser,
 } from "react-icons/fi";
 import { IoPawOutline } from "react-icons/io5";
 import NavItem from "./NavItem";
@@ -81,6 +82,10 @@ export default function Sidebar() {
         </Link>
         {Auth.loggedIn() ? (
           <>            
+            <Link to={`/profiles/${user.username}`}>
+              <NavItem navSize={navSize} icon={FiUser} title="Profile" />
+            </Link>
+
             <Link to="/chat">
               <NavItem navSize={navSize} icon={FiMail} title="Chatroom" />
             </Link>

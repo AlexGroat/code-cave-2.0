@@ -39,7 +39,7 @@ const Profile = () => {
       <div className="column-container">
         <div className="columns" style={{ display: "flex" }}>
           <div className="column-2 col-6">
-            <Heading mt={2}>
+            <Heading mt={2} mb={9}>
               Welcome to {currentUser ? `${user.username}'s` : "your"} profile.
             </Heading>
             {Auth.loggedIn() ? (
