@@ -15,11 +15,11 @@ const PostSection = ({ posts = [] }) => {
             mt={3}
           >
             <Link to={`/profiles/${post?.postAuthor}`}>
-              <Heading>{post?.postAuthor}</Heading>
+              <Heading ml={1}>{post?.postAuthor}</Heading>
             </Link>
-            <Text>{post?.createdAt}</Text>
+            <Text ml={1}>{post?.createdAt}</Text>
             <Divider />
-            <Code mt={2} mb={2} fontSize="md">{post?.postText}</Code>
+            <Code mt={2} mb={2} ml={1} fontSize="md">{post?.postText}</Code>
             <Link to={`/posts/${post?._id}`}>
               <Divider />
               <Button
