@@ -19,13 +19,14 @@ const PostSection = ({ posts = [] }) => {
             </Link>
             <Text>{post?.createdAt}</Text>
             <Divider />
-            <Code fontSize="md">{post?.postText}</Code>
+            <Code mt={2} mb={2} fontSize="md">{post?.postText}</Code>
             <Link to={`/posts/${post?._id}`}>
               <Divider />
               <Button
                 colorScheme="blue"
                 style={{ curser: "pointer" }}
                 type="submit"
+                mt={2}
               >
                 Solve the code here!
               </Button>
