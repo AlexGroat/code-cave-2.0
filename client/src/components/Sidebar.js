@@ -12,6 +12,7 @@ import {
   Heading,
   useColorMode,
   useColorModeValue,
+  Switch
 } from "@chakra-ui/react";
 import { StarIcon } from '@chakra-ui/icons'
 import {

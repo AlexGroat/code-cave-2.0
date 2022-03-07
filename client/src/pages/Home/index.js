@@ -5,6 +5,7 @@ import News from "../../components/News";
 import PostForm from '../../components/PostForm'
 import { useQuery } from "@apollo/client";
 import { QUERY_POSTS } from "../../utils/queries";
+import PostSection from "../../components/Postcard";
 
 export default function Home() {
   const { loading, data } = useQuery(QUERY_POSTS);
@@ -30,6 +31,8 @@ export default function Home() {
           <div className="column-2 col-6">
             <Heading mt={3}>Code Cave</Heading>
             <PostForm />
+            <PostSection
+            posts={posts} />
           </div>
           <div className="column-3 col-6">
           <Heading mt={3} mb={3}>Tech News</Heading>
