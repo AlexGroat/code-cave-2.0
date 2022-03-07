@@ -5,7 +5,7 @@ import News from "../../components/News";
 import PostForm from '../../components/PostForm'
 import { useQuery } from "@apollo/client";
 import { QUERY_POSTS } from "../../utils/queries";
-import PostSection from "../../components/Postcard";
+import PostSection from "../../components/PostSection";
 
 export default function Home() {
   const { loading, data } = useQuery(QUERY_POSTS);
