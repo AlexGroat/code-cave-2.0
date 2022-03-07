@@ -3,8 +3,12 @@ import { Flex, Heading, Input } from "@chakra-ui/react";
 import "./index.css";
 import News from "../../components/News";
 import PostForm from '../../components/PostForm'
+import { useQuery } from "@apollo/client";
+import { QUERY_POSTS } from "../../utils/queries";
 
 export default function Home() {
+  const { loading, data } = useQuery(QUERY_POSTS);
+  const posts = data?.posts || [];
   return (
     <div className="home-container" style={{ display: "flex" }}>
       <div
