@@ -12,9 +12,9 @@ import {
   Heading,
   useColorMode,
   useColorModeValue,
-  Switch
+  Switch,
 } from "@chakra-ui/react";
-import { StarIcon } from '@chakra-ui/icons'
+import { MoonIcon, StarIcon, SunIcon } from "@chakra-ui/icons";
 import {
   FiMenu,
   FiHome,
@@ -23,6 +23,8 @@ import {
   FiMail,
   FiUserPlus,
   FiUser,
+  FiSun,
+  FiMoon,
 } from "react-icons/fi";
 import { IoPawOutline } from "react-icons/io5";
 import NavItem from "./NavItem";
@@ -32,7 +34,7 @@ export default function Sidebar() {
     event.preventDefault();
     Auth.logout();
   };
-  const { toggleColorMode } = useColorMode();
+  const { colorMode,toggleColorMode } = useColorMode();
   const formBackground = useColorModeValue("gray.100", "gray.700");
 
   const { username: currentUser } = useParams();
@@ -81,7 +83,7 @@ export default function Sidebar() {
           />
         </Link>
         {Auth.loggedIn() ? (
-          <>            
+          <>
             <Link to={`/profiles/${user.username}`}>
               <NavItem navSize={navSize} icon={FiUser} title="Profile" />
             </Link>
@@ -93,7 +95,6 @@ export default function Sidebar() {
             <Link to="/" onClick={logout}>
               <NavItem navSize={navSize} icon={FiLogOut} title="Logout" />
             </Link>
-
 
             <Flex
               p="5%"
@@ -143,7 +144,10 @@ export default function Sidebar() {
             ml={4}
             display={navSize == "small" ? "center" : "flex"}
           >
-            <Button onClick={toggleColorMode}><StarIcon /></Button>
+            <IconButton
+              icon={colorMode === "light" ? <SunIcon /> : <MoonIcon />}
+              onClick={toggleColorMode}
+            ></IconButton>
           </Flex>
         </Flex>
       </Flex>
