@@ -14,7 +14,7 @@ import {
   useColorModeValue,
   Switch,
 } from "@chakra-ui/react";
-import { MoonIcon, StarIcon, SunIcon } from "@chakra-ui/icons";
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import {
   FiMenu,
   FiHome,
