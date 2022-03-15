@@ -16,6 +16,7 @@ import {
 
 import Sidebar from "../../components/Sidebar";
 import News from "../../components/News";
+import CommentForm from "../../components/CommentForm";
 
 const SinglePost = () => {
   // use useparams() to retrieve value of the route parameter postId in app.js
@@ -73,6 +74,7 @@ const SinglePost = () => {
               <Code mt={2} mb={2} ml={1} fontSize="md">
                 {post?.postText}
               </Code>
+              <CommentForm  postId={post._id}/>
               <Divider />
             </Box>
           </div>

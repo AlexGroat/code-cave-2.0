@@ -1,90 +1,92 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
-import { Heading } from "@chakra-ui/react";
+import { Heading, Textarea, Text, Button } from "@chakra-ui/react";
 
-import { ADD_COMMENT } from '../utils/mutations';
+import { ADD_COMMENT } from "../utils/mutations";
 
-import Auth from '../utils/auth';
+import Auth from "../utils/auth";
 
 // pass post ID as props
-const CommentForm = ({ postId}) => {
-    const { commentText, setCommentText } = useState("");
-    const { commentCount, setCommentCount } = useState(0);
+const CommentForm = ({ postId }) => {
+  const [commentText, setCommentText] = useState("");
+  const [commentCount, setCommentCount] = useState(0);
 
-    const [ addComment, { error }] = useMutation(ADD_COMMENT);
+  const [addComment, { error }] = useMutation(ADD_COMMENT);
 
-    const handleFormSubmit = async (event) => {
-        event.preventDefault();
-        
-        try {
-            const { data } = await addComment({
-                variables: {
-                    postId,
-                    commentText,
-                    commentAuthor: Auth.getProfile().data.username,
-                },
-            });
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
 
-            setCommentText("");
-        } catch (err) {
-            console.error(err);
-        }
-    };
+    try {
+      const { data } = await addComment({
+        variables: {
+          postId,
+          commentText,
+          commentAuthor: Auth.getProfile().data.username,
+        },
+      });
 
-    const handleChange = (event) => {
-        const { name, value } = event.target;
+      setCommentText("");
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
-        if (name === 'commentText' && value.length <= 280) {
-            setCommentText(value);
-            setCharacterCount(value.length);
-          }
-    };
+  const handleChange = (event) => {
+    const { name, value } = event.target;
 
-    return (
-        <div>
-        <Heading>Post your coding answer to this question!</Heading>
-  
-        {Auth.loggedIn() ? (
-          <>
-            <p
-              className={`m-0 ${
-                characterCount === 280 || error ? 'text-danger' : ''
-              }`}
+    if (name === "commentText" && value.length <= 280) {
+      setCommentText(value);
+      setCommentCount(value.length);
+    }
+  };
+
+  return (
+    <div>
+      {Auth.loggedIn() ? (
+        <>
+          <Text
+            className={`${commentCount === 280 || error ? "text-danger" : ""}`}
+          >
+            Comment Count: {commentCount}/280
+            {error && <span className="ml-2">{error.message}</span>}
+          </Text>
+
+          <form onSubmit={handleFormSubmit}>
+            <Textarea
+              mt={2}
+              name="commentText"
+              placeholder="Solve here"
+              value={commentText}
+              onChange={handleChange}
+            ></Textarea>
+            <Button
+              colorScheme="blue"
+              style={{ curser: "pointer" }}
+              mt={1}
+              type="submit"
+            
             >
-              Character Count: {characterCount}/280
-              {error && <span className="ml-2">{error.message}</span>}
-            </p>
-            <form
-              className="flex-row justify-center justify-space-between-md align-center"
-              onSubmit={handleFormSubmit}
-            >
-              <div className="col-12 col-lg-9">
-                <textarea
-                  name="commentText"
-                  placeholder="Add your comment..."
-                  value={commentText}
-                  className="form-input w-100"
-                  style={{ lineHeight: '1.5', resize: 'vertical' }}
-                  onChange={handleChange}
-                ></textarea>
-              </div>
-  
-              <div className="col-12 col-lg-3">
-                <button className="btn btn-primary btn-block py-3" type="submit">
-                  Add Comment
-                </button>
-              </div>
-            </form>
-          </>
-        ) : (
-          <p>
-            Login or signup to help with this coding question. Please{' '}
-            <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
-          </p>
-        )}
-      </div>
-    )
-}
+              Solve
+            </Button>
+          </form>
+        </>
+      ) : (
+        <Text>
+          <Link to="/signup">
+            <Button colorScheme="blue" style={{ curser: "pointer" }}>
+              Signup
+            </Button>
+          </Link>{" "}
+          <Link to="/login">
+            <Button colorScheme="blue" style={{ curser: "pointer" }}>
+              Login
+            </Button>
+          </Link>
+        </Text>
+      )}
+    </div>
+  );
+};
 
 export default CommentForm;
