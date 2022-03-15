@@ -65,7 +65,6 @@ const CommentForm = ({ postId }) => {
               style={{ curser: "pointer" }}
               mt={1}
               type="submit"
-            
             >
               Solve
             </Button>
