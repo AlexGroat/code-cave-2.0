@@ -17,6 +17,7 @@ import {
 import Sidebar from "../../components/Sidebar";
 import News from "../../components/News";
 import CommentForm from "../../components/CommentForm";
+import Comments from "../../components/Comments";
 
 const SinglePost = () => {
   // use useparams() to retrieve value of the route parameter postId in app.js
@@ -74,9 +75,10 @@ const SinglePost = () => {
               <Code mt={2} mb={2} ml={1} fontSize="md">
                 {post?.postText}
               </Code>
-              <CommentForm  postId={post._id}/>
+              <CommentForm postId={post._id} />
               <Divider />
             </Box>
+            <Comments comments={post.comments} />
           </div>
           <div className="column-3 col-6">
             <Heading mt={3} mb={3}>
