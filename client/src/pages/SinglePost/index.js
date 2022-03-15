@@ -4,6 +4,7 @@ import { useQuery } from "@apollo/client";
 
 import { QUERY_SINGLE_POST } from '../../utils/queries';
 import { Heading } from "@chakra-ui/react";
+import { Spinner } from "react-bootstrap";
 
 const SinglePost = () => {
     // use useparams() to retrieve value of the route parameter postId in app.js
@@ -18,7 +19,7 @@ const SinglePost = () => {
     const post = data?.post || {};
 
     if (loading) {
-        return <Heading>Retrieving Post</Heading>
+        return <Heading>Retrieving Post<Spinner size='xs'/></Heading>
     }
 
     return (
